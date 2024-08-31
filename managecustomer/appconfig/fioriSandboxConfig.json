@@ -1,0 +1,9 @@
+{
+  "applications": {
+    "ManageOrders-manage": {
+      "additionalInformation": "SAPUI5.Component=com.sap.demo.manageorders",
+      "applicationType": "URL",
+      "url": "../resources/com.sap.demo.manageorders"
+    }
+  }
+}

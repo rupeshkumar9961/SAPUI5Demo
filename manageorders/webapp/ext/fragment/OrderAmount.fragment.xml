@@ -1,0 +1,12 @@
+<core:FragmentDefinition 
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+  <l:VerticalLayout  core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}">
+      <Title id="titleID1" text="Order Amount"
+            class="sapUiTinyMarginBottom"/>
+        <ObjectStatus id="objStatus"
+      text="{parts: [{path: 'Freight'}, {value: 'USD'}], formatter: 'formatter.formatDecimal'}"
+      class="sapMObjectStatusLarge" />
+   </l:VerticalLayout>
+</core:FragmentDefinition>

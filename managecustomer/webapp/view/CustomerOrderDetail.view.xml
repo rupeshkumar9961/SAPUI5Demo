@@ -1,0 +1,80 @@
+<mvc:View controllerName="com.sap.demo.managecustomer.managecustomer.controller.CustomerOrderDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+            <m:VBox id="idOrderDetailsVBox" class="sapUiSmallMargin">
+                <f:Form id="idOrderDetailsForm" editable="false" class="centeredText">
+                    <f:title>
+                        <core:Title id="idOrderDetailsTitle" text="Order Details" />
+                    </f:title>
+                    <f:layout>
+                        <f:ResponsiveGridLayout id="idOrderDetailsResponsiveGridLayout"
+                            labelSpanXL="4"
+                            labelSpanL="4"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="3"
+                            columnsL="2"
+                            columnsM="2"
+                            singleContainerFullSize="false" />
+                    </f:layout>
+                    <f:formContainers>
+                        <!-- Order Information -->
+                        <f:FormContainer id="idOrderInformationFormContainer" title="Order Information">
+                            <f:formElements>
+                                <f:FormElement id="idOrderIDFormElement" label="Order ID">
+                                    <f:fields>
+                                        <m:Text id="idOrderIDText" text="{ parts: [{ path: 'firstRecordModel>/OrderID' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idCustomerIDFormElement" label="Customer ID">
+                                    <f:fields>
+                                        <m:Text id="idCustomerIDText" text="{ parts: [{ path: 'firstRecordModel>/CustomerID' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idOrderDateFormElement" label="Order Date">
+                                    <f:fields>
+                                        <m:Text id="idOrderDateText" core:require="{formatter: 'com/sap/demo/managecustomer/managecustomer/model/formatter'}" 
+                                           text="{ parts: [{ path: 'firstRecordModel>/OrderDate' }], formatter:'formatter.formatDate'}" />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+
+                        <!-- Address Information -->
+                        <f:FormContainer id="idAddressInformationFormContainer" title="Ordering Address">
+                            <f:formElements>
+                                <f:FormElement id="idAddressFormElement" label="Address">
+                                    <f:fields>
+                                        <m:Text id="idShipAddressText" text="{ parts: [{ path: 'firstRecordModel>/ShipAddress' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idCityFormElement" label="City">
+                                    <f:fields>
+                                        <m:Text id="idShipCityText" text="{ parts: [{ path: 'firstRecordModel>/ShipCity' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idRegionFormElement" label="Region">
+                                    <f:fields>
+                                        <m:Text id="idShipRegionText" text="{ parts: [{ path: 'firstRecordModel>/ShipRegion' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idCountryFormElement" label="Country">
+                                    <f:fields>
+                                        <m:Text id="idShipCountryText" text="{ parts: [{ path: 'firstRecordModel>/ShipCountry' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </m:VBox>
+        
+</mvc:View>

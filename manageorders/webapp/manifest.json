@@ -1,0 +1,377 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "com.sap.demo.manageorders",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.14.3-pre-20240717081120-23681868d.0",
+      "toolsId": "4bea7b61-ccef-4967-92a7-aef9e7c29490"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "ManageOrders-manage": {
+          "semanticObject": "ManageOrders",
+          "action": "manage",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.126.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.f": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.suite.ui.generic.template": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.sap.demo.manageorders.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true,
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline"
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {},
+      "routes": [],
+      "targets": {}
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+            "controllerName": "com.sap.demo.manageorders.ext.controller.OrderListPage",
+            "sap.ui.generic.app": {
+              "Orders": {
+                "EntitySet": "Orders",
+                "Actions": {
+                  "CustomerDetails": {
+                    "id": "idCustomerDetails",
+                    "text": "Customer Details",
+                    "press": ".extension.com.sap.demo.manageorders.ext.controller.OrderListPage.onPressCustomerDetails",
+                    "requiresSelection": true,
+                    "enabled": true
+                  }
+                }
+              }
+            }
+          },
+          "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+            "controllerName": "com.sap.demo.manageorders.ext.controller.OrderObjectPage",
+            "sap.ui.generic.app": {
+              "Orders": {
+                "EntitySet": "Orders",
+                "Header": {
+                  "Actions": {
+                    "ManageCustomers": {
+                      "id": "idManageCustomers",
+                      "text": "Manage Customers",
+                      "press": ".extension.com.sap.demo.manageorders.ext.controller.OrderObjectPage.onPressManageCustomers",
+                      "enabled": true
+                    },
+                    "Express Delivery Requested":{
+                      "id": "ExpressDelivery",
+                      "text": "Change Delivery Type ",
+                      "press":"com.sap.demo.manageorders.custom.CustomActions.changeDeliveryType",
+                      "enabled":true
+                    }
+                  }
+                },
+                "Sections": {
+                  "Order_Details::com.sap.vocabularies.UI.v1.LineItem": {
+                    "id": "OrderData1",
+                    "Actions": {
+                      "AddItem": {
+                        "id": "idAddItem",
+                        "text": "Add Item",
+                        "press": "onAddItem"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "sap.ui.viewExtensions": {
+          "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+            "ResponsiveTableColumnsExtension|Orders": {
+              "type": "XML",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ListPageTableColLabel",
+              "className": "sap.ui.core.Fragment"
+            },
+            "ResponsiveTableCellsExtension|Orders": {
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ListPageTableColValue",
+              "className": "sap.ui.core.Fragment",
+              "type": "XML"
+            }
+          },
+          "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+            "BeforeHeaderFacet|Orders|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::Freight": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.HeaderStatusFacet",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "BeforeHeaderFacet|Orders|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::ShipName": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.OrderAmount",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "AfterHeaderFacet|Orders|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::ShipName": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.OrderDate",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "BeforeFacet|Orders|AddressData1": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.BasicHeaderDetails",
+              "type": "XML",
+              "sap.ui.generic.app": {
+                "title": "Basic Information",
+                "id": "idBasicDetailsOnOrderPage"
+              }
+            },
+            "AfterFacet|Orders|AddressData1": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.PaymentInfo",
+              "type": "XML",
+              "sap.ui.generic.app": {
+                "title": "Payment Details",
+                "id": "idPaymentInfoOnOrderPage"
+              }
+            },
+            "ResponsiveTableColumnsExtension|Order_Details|OrderData1": {
+              "type": "XML",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ObjectPageTableColLabel",
+              "className": "sap.ui.core.Fragment"
+            },
+            "ResponsiveTableCellsExtension|Order_Details|OrderData1": {
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ObjectPageTableColValue",
+              "className": "sap.ui.core.Fragment",
+              "type": "XML"
+            },
+            "AfterHeaderFacet|Orders|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::UnitPrice": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ItemQuantity",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "BeforeHeaderFacet|Order_Details|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::UnitPrice": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.HeaderStatusFacet",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "ReplaceHeaderFacet|Order_Details|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::Quantity": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ItemQuantityFacet",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "ReplaceHeaderFacet|Order_Details|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::UnitPrice": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ItemUnitPriceFacet",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "AfterHeaderFacet|Order_Details|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::Quantity": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.ItemTotalNetAmountFacet",
+              "type": "XML",
+              "bVisibleOnEdit": true
+            },
+            "AfterFacet|Order_Details|GeneralInfoData": {
+              "className": "sap.ui.core.mvc.View",
+              "viewName": "com.sap.demo.manageorders.ext.view.OrderDetailPageSection01",
+              "type": "XML",
+              "sap.ui.generic.app": {
+                "title": "Pricing Details"
+              }
+            },
+            "BeforeFacet|Order_Details|SupplierDetails": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.sap.demo.manageorders.ext.fragment.SectionOnOrderPage",
+              "type": "XML",
+              "sap.ui.generic.app": {
+                "title": "Tracking Information"
+              }
+            }
+          }
+        }
+   
+      }
+    }
+  },
+  "sap.ui.generic.app": {
+    "_version": "1.3.0",
+    "settings": {
+      "forceGlobalRefresh": true,
+      "showDraftToggle": false,
+      "autoExpandSelect": true
+    },
+    "pages": {
+      "ListReport|Orders": {
+        "entitySet": "Orders",
+        "component": {
+          "name": "sap.suite.ui.generic.template.ListReport",
+          "list": true, 
+          "settings": {
+            "condensedTableLayout": true,
+            "variantManagementHidden": true,
+            "subTitleIfVariantMgmtHidden": "Manage Orders - List",
+            "dataLoadSettings": {
+              "loadDataOnAppLaunch": "always"
+            },
+            "tableSettings": {
+              "type": "ResponsiveTable",
+              "enableExport": false,
+              "selectAll": true,
+              "selectionLimit": 20,
+              "multiSelect": false,
+              "tableColumnVerticalAlignment": "Middle",
+              "enableAutoBinding": true
+
+            },
+            "navigation": {
+              "routing": {
+                "detailDetail": "ObjectPage|Orders"
+              }
+            }
+          }
+        },
+        "pages": {
+          "ObjectPage|Orders": {
+            "entitySet": "Orders",
+
+            "component": {
+              "name": "sap.suite.ui.generic.template.ObjectPage",
+              "settings": {
+                "condensedTableLayout": true,
+
+                "editableHeaderContent": false,
+                "sections": {
+                  "OrderData1": {
+                    "tableSettings": {
+                      "multiSelect": true,
+                      "type": "ResponsiveTable",
+                      "tableColumnVerticalAlignment": "Middle"
+                    }
+                  }
+                },
+                "navigation": {
+                  "routing": {
+                    "detailDetail": "ObjectPage|Order_Details"
+                  }
+                }
+              }
+            },
+            "pages": {
+              "ObjectPage|Order_Details": {
+                "navigationProperty": "Order_Details",
+                "entitySet": "Order_Details",
+                "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
+                "component": {
+                  "name": "sap.suite.ui.generic.template.ObjectPage",
+                  "settings": {
+                    "editableHeaderContent": false
+                  }
+                }
+              }
+            },
+            "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen"
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}

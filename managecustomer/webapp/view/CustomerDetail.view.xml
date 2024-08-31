@@ -1,0 +1,101 @@
+<mvc:View xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="com.sap.demo.managecustomer.managecustomer.controller.CustomerDetail"
+    height="100%">
+    <m:Page id="idCustomerDetailPage" showHeader="true" title="Customer Details" titleAlignment="Center" titleLevel="H1" contentOnlyBusy="true" class="pageHeader">
+    <m:headerContent>
+    <m:Button id="idCreateYourOrderButton" text="Create Your Order" press="onCreateYourOrderButtonPress"></m:Button>
+    </m:headerContent>
+        <m:content>
+            <m:VBox id="idCustomerDetailVBox" class="sapUiSmallMargin centeredText">
+                <f:Form id="idCustomerForm" editable="false">
+
+                    <f:layout>
+                        <f:ResponsiveGridLayout id="idCustomerDetailResponsiveGridLayout"
+                            labelSpanXL="4"
+                            labelSpanL="4"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="3"
+                            columnsL="2"
+                            columnsM="2"
+                            singleContainerFullSize="false" />
+                    </f:layout>
+                    <f:formContainers>
+                        <!-- Basic Information -->
+                        <f:FormContainer id="idBasicInformationFormContainer" title="Basic Information">
+                            <f:formElements>
+                                <f:FormElement id="idCustomerIDFormElement" label="Customer ID">
+                                    <f:fields>
+                                        <m:Text id="idCustomerIDText" text="{ parts: [{ path: 'CustomerID' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idCompanyNameFormElement" label="Company Name">
+                                    <f:fields>
+                                        <m:Text id="idCompanyNameText" text="{ parts: [{ path: 'CompanyName' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idContactNameFormElement" label="Contact Name">
+                                    <f:fields>
+                                        <m:Text id="idContactNameText" text="{ parts: [{ path: 'ContactName' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idContactTitleFormElement" label="Contact Title">
+                                    <f:fields>
+                                        <m:Text id="idContactTitleText" text="{ parts: [{ path: 'ContactTitle' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+
+                        <!-- Address Information -->
+                        <f:FormContainer id="idAddressInformationFormContainer" title="Address Information">
+                            <f:formElements>
+                                <f:FormElement id="idAddressFormElement" label="Address">
+                                    <f:fields>
+                                        <m:Text id="idAddressText" text="{ parts: [{ path: 'Address' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idCityFormElement" label="City">
+                                    <f:fields>
+                                        <m:Text id="idCityText" text="{ parts: [{ path: 'City' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idRegionFormElement" label="Region">
+                                    <f:fields>
+                                        <m:Text id="idRegionText" text="{ parts: [{ path: 'Region' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idPostalCodeFormElement" label="Postal Code">
+                                    <f:fields>
+                                        <m:Text id="idPostalCodeText" text="{ parts: [{ path: 'PostalCode' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idCountryFormElement" label="Country">
+                                    <f:fields>
+                                        <m:Text id="idCountryText" text="{ parts: [{ path: 'Country' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="idPhoneFormElement" label="Phone">
+                                    <f:fields>
+                                        <m:Text id="idPhoneText" text="{ parts: [{ path: 'Phone' }] }" />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </m:VBox>
+        </m:content>
+
+        <m:content>
+            <mvc:XMLView id="idOrderListXMLView" viewName="com.sap.demo.managecustomer.managecustomer.view.CustomerOrderList" />
+        </m:content>
+    </m:Page>
+</mvc:View>

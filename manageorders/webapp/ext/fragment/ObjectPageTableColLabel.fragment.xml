@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Column id="idObjectTabColItemImageColumn">
+        <Text text="" id="idItemImageCol01Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="ItemImageKey" value="\{columnKey: ItemImageColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabColItemProductIDColumn">
+        <Text text="Product ID" id="idProductIDItemCol02Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="ProductIDItemKey" value="\{columnKey: ProductIDItemColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabColItemUnitPriceColumn">
+        <Text text="Unit Price" id="idUnitPriceItemCol03Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="UnitPriceItemKey" value="\{columnKey: UnitPriceItemColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabItemColOrderStatusColumn">
+        <Text text="Item Status" id="idItemStatusCol04Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="ItemStatusKey" value="\{columnKey: ItemStatusColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabItemColQuantityColumn">
+        <Text text="Quantity" id="idQuantityItemCol05Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="QuantityItemKey" value="\{columnKey: QuantityItemColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+        <Column id="idListTabItemColTotalNetAmountColumn">
+        <Text text="Total Net Amount" id="idTotalNetAmountItemCol05Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="TotalNetAmountItemKey" value="\{columnKey: TotalNetAmountItemColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+</core:FragmentDefinition>

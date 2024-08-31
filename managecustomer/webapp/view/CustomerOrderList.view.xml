@@ -1,0 +1,66 @@
+<mvc:View controllerName="com.sap.demo.managecustomer.managecustomer.controller.CustomerOrderList"
+	xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+	xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+    <l:ResponsiveSplitter defaultPane="defaultPane" id="idResponsiveSplitter">
+        <l:PaneContainer id="iddefaultPaneContainer">
+            <l:SplitPane id="idOrderListSplitPane">
+                <l:layoutData>
+                    <l:SplitterLayoutData id="idOrderListSplitterLayoutData" size="40%" resizable="false"/>
+                </l:layoutData>
+                <Table headerText="Customer Orders" id="idOrdersTable" growing="true" growingThreshold="5" alternateRowColors="true"
+                items="{
+                        path: 'Orders'
+                        }" class="centeredText">
+                    <headerToolbar>
+                        <OverflowToolbar id="idOverflowToolbar">
+                            <content>
+                                <Title text="Customer Orders" id="idCustomerOrdersTitle"/>
+                                <ToolbarSpacer id="idToolbarSpacer"/>
+                                <SearchField id="idSearchField" width="50%" placeholder="{i18n>searchFieldOrdrIDPlaceholder}" search=".onSearchFieldSearch"/>
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column id="idOrderIDColumn">
+                            <Text text="Order ID" id="idOrderIDText" />
+                        </Column>
+                        <Column id="idCustomerIDColumn">
+                            <Text text="Customer ID" id="idCustomerIDText"/>
+                        </Column>
+                        <Column id="idOrderDateColumn">
+                            <Text id="idOrderDateText" text="Order Date"
+                            />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="idOrderItemColumnListItem" type="Active" press=".onColumnListItemOrderPress" bindingContexts="item">
+                            <cells>
+                                <Text id="idOrderIDItemText" 
+                                text='{OrderID}'
+                                />
+                            </cells>
+                            <cells>
+                               <Text id="idCustomerIDItemText" text='{CustomerID}' />
+                            </cells>
+                            <cells>
+                                <Text id="idOrderDateItemText" core:require="{formatter: 'com/sap/demo/managecustomer/managecustomer/model/formatter'}" 
+                                        text="{path: 'OrderDate', formatter: 'formatter.formatDate'}"
+                                 />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </l:SplitPane>
+        <l:SplitPane id="idOrderDetailSplitPane">
+            <l:layoutData>
+                <l:SplitterLayoutData id="idOrderDetailSplitterLayoutData" size="60%" resizable="false"/>
+            </l:layoutData>
+            <mvc:XMLView id="idOrderDetailXMLView" viewName="com.sap.demo.managecustomer.managecustomer.view.CustomerOrderDetail"/>
+        </l:SplitPane>
+        </l:PaneContainer>
+    </l:ResponsiveSplitter>
+
+</mvc:View>

@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Image id="idImageCol01ValImage" src="../../images/HT-1137.jpg" alt="Image Description" width="120px" height="60px" />
+    <Text id="idOrderIDCol02ValText" text="{
+            path: 'OrderID'
+        }" />
+    <Link id="idCustomerIDLink" text="{parts: [{path: 'CustomerID'}]}" press=".extension.com.sap.demo.manageorders.ext.controller.OrderListPage.onCustomerIDListPagePress" />
+    <Text id="idOrderDateCol04ValText" core:require="{
+            formatter: 'com/sap/demo/manageorders/model/formatter'
+        }" text="{
+            path: 'OrderDate',
+            formatter: 'formatter.formatDate'
+        }" />
+    <ObjectStatus id="idOrderedCol05ValStatusObjectStatus" text="Ordered" state="Success" />
+    <Text id="idShipAddressCol06ValText" text="{
+            path: 'ShipAddress'
+        }" />
+</core:FragmentDefinition>

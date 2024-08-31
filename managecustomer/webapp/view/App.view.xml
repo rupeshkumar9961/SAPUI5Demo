@@ -1,0 +1,6 @@
+<mvc:View controllerName="com.sap.demo.managecustomer.managecustomer.controller.App"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <App id="idApp" visible="true" height="100%" >
+    </App>
+</mvc:View>

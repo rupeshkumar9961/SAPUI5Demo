@@ -1,0 +1,17 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+    <VBox id="idItemTotalNetAmountVBox">
+        <Title id="idTotalNetAmountItemTitle" text="Total Net Amount" class="sapUiTinyMarginBottom"/>
+        <ObjectStatus id="idTotalNetAmountItemObjectStatus" class="sapMObjectStatusLarge"
+            c:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}"
+            text="{
+                parts: [
+                    {path: 'UnitPrice'},
+                    {path: 'Quantity'}
+                ],
+                formatter: 'formatter.calculateTotalAmountWithCurrency'
+        }" />
+    </VBox>
+</c:FragmentDefinition>

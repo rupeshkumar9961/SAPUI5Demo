@@ -1,0 +1,11 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+    <VBox id="idHeaderStatusVBox">
+        <Title id="idStatusHeaderTitle" text="Status" class="sapUiTinyMarginBottom"/>
+        <ObjectStatus id="idOrderedHeaderObjectStatus" class="sapMObjectStatusLarge"
+            text="Ordered"
+            state="Success" />
+    </VBox>
+</c:FragmentDefinition>

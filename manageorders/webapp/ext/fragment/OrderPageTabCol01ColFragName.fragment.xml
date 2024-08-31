@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Column id="idFioriTools::OrderPageTabCol02Column">
+        <Text text="OrderPageTabCol02Text" id="idOrderPageTabColText2Text"/>
+        <customData>
+            <core:CustomData key="p13nData" value="\{&quot;columnIndex&quot;: &quot;1&quot;, &quot;columnKey&quot;: &quot;OrderPageTabCol02&quot;}"/>
+        </customData>
+    </Column>
+    <Column id="idFioriTools::OrderPageTabCol01KeyColumn">
+        <Text text="OrderPageTabCol01Text" id="idOrderPageTabColTextText"/>
+        <customData>
+            <core:CustomData key="p13nData" value="\{&quot;columnIndex&quot;: &quot;1&quot;, &quot;columnKey&quot;: &quot;OrderPageTabCol01Key&quot;}"/>
+        </customData>
+    </Column>
+</core:FragmentDefinition>

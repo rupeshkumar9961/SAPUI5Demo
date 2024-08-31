@@ -1,0 +1,61 @@
+.centeredText {
+    text-align: center;
+    background-color: #cdcfce;
+}
+
+html.sap-desktop:not(.sapUiNativeScrollbars) {
+    scrollbar-color: #313233 #c79999;
+}
+
+.sapMIBar-CTX .sapMTitle {
+    color: #6ca0d8;
+    text-shadow: none;
+}
+
+.pageHeader .sapMTitleStyleAuto {
+    font-size: 1.5rem;
+}
+
+.headerTitle {
+    text-align: center;
+    background-color: #cdcfce;
+    font-size: 30px;
+
+}
+
+.sapUiFormTitleH1, .sapUiFormTitleH2, .sapUiFormTitleH3, .sapUiFormTitleH4, .sapUiFormTitleH5, .sapUiFormTitleH6 {
+    font-weight: normal;
+    color: #e8620e;
+}
+
+
+
+.sapMTitle {
+    font-weight: bold;
+    color: #6311e6;
+}
+
+
+.sapUiFormContainerTitle .sapUiFormTitleH1, .sapUiFormContainerTitle .sapUiFormTitleH2, .sapUiFormContainerTitle .sapUiFormTitleH3, .sapUiFormContainerTitle .sapUiFormTitleH4, .sapUiFormContainerTitle .sapUiFormTitleH5, .sapUiFormContainerTitle .sapUiFormTitleH6 {
+    color: #6208f4;
+    font-weight: bold;
+}
+
+
+.sapMLabel {
+    color: #0a2139;
+    font-weight: bold;
+}
+
+.sapMColumnHeader .sapMText {
+    font-weight: bold;
+}
+
+.sapUiTableHeaderDataCell .sapMText, .sapMColumnHeader .sapMText {
+    color: #5c1dc2;
+}
+
+.sapMSFI {
+    color: #e76500;
+    border: #6311e6;
+}

@@ -1,0 +1,12 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+    <VBox id="idItemUnitPriceVBox">
+        <Title id="idUnitPriceItemTitle" text="Unit Price" class="sapUiTinyMarginBottom"/>
+        <ObjectStatus id="idUnitPriceItemObjectStatus" class="sapMObjectStatusLarge"
+            c:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}"
+            text="{path: 'UnitPrice', formatter: 'formatter.formatUnitPrice'}"
+        />
+    </VBox>
+</c:FragmentDefinition>

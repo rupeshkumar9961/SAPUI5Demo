@@ -1,0 +1,59 @@
+<mvc:View controllerName="com.sap.demo.managecustomer.managecustomer.controller.Customers"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="idPage" titleAlignment="Center" titleLevel="H1" showHeader="false" title="Customers" contentOnlyBusy="true" backgroundDesign="Transparent" class="headerTitle pageHeader">
+        <content>
+            <Carousel id="idCarousel" height="200px" loop="true" showPageIndicator="false">
+                <HBox id="idFirstSetHBox">
+                    <Image id="id07Image" src="../Images/image07.jpg" width="300px" height="200px"/>
+                    <Image id="id01Image" src="../Images/image01.jpg" width="300px" height="200px"/>
+                    <Image id="id02Image" src="../Images/image02.jpg" width="300px" height="200px"/>
+                    <Image id="id10Image" src="../Images/image10.jpg" width="300px" height="200px"/>
+                    <Image id="id06Image" src="../Images/image06.jpg" width="300px" height="200px"/>
+                </HBox>
+                <HBox id="idSecndSetHBox">
+                    <Image id="id09Image" src="../Images/image09.jpg" width="300px" height="200px"/>
+                    <Image id="id03Image" src="../Images/image03.jpg" width="300px" height="200px"/>
+                    <Image id="id04Image" src="../Images/image04.jpg" width="300px" height="200px"/>
+                    <Image id="id08Image" src="../Images/image08.jpg" width="300px" height="200px"/>
+                    <Image id="id05Image" src="../Images/image05.jpg" width="300px" height="200px"/>
+                </HBox>
+            </Carousel>
+        </content>
+        <content>
+            <Table id="idCustomersTable" items="{/Customers}" alternateRowColors="true" growing="true" class="centeredText">
+                <headerToolbar>
+                    <OverflowToolbar id="idCustomerOverflowToolbar">
+                        <Title text="Customers List" level="H2" id="idCustomersListTableTitle"/>
+                        <ToolbarSpacer id="idCustomerToolbarSpacer"/>
+                        <SearchField id="idSearchField" width="50%" liveChange=".onSearchFieldCustomerLiveChange" placeholder="{i18n>searchFieldCustomerIDPlaceholder}"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="idCustomerIDColumn">
+                        <Text text="Customer ID" id="idCustomerIDText"/>
+                    </Column>
+                    <Column id="idCompanyNameColumn">
+                        <Text text="Company Name" id="idCompanyNameColText"/>
+                    </Column>
+                    <Column id="idContactNameColumn">
+                        <Text text="Contact Name" id="idContactNameColText"/>
+                    </Column>
+                    <Column id="idAddressColumn">
+                        <Text text="Address" id="idAddressColText"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="idCustomerColumnListItem" type="Active" press=".onColumnListItemCustomerDetailsNavPress" class="centeredText">
+                        <cells>
+                            <Text text="{CustomerID}" id="idCustomerIDCellText"/>
+                            <Text text="{CompanyName}" id="idCompanyNameCellText"/>
+                            <Text text="{ContactName}" id="idContactNameCellText"/>
+                            <Text text="{Address}" id="idAddressCellText"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

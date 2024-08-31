@@ -1,0 +1,12 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+    <VBox id="idItemQuantityVBox">
+        <Title id="idQuantityItemTitle" text="Quantity" class="sapUiTinyMarginBottom"/>
+        <ObjectStatus id="idQuantityItemObjectStatus" class="sapMObjectStatusLarge"
+            c:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}"
+            text="{path: 'Quantity', formatter: 'formatter.formatQuantityText'}"
+        />
+    </VBox>
+</c:FragmentDefinition>

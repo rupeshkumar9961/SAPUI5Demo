@@ -1,0 +1,37 @@
+specVersion: "3.1"
+metadata:
+  name: com.sap.demo.manageorders
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+        backend:
+          - path: /V2
+            url: https://services.odata.org
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: com.sap.demo.manageorders
+        ui5Theme: sap_horizon
+    - name: fiori-tools-servestatic
+      afterMiddleware: compression
+      configuration:
+        paths:
+          - path: /resources/com.sap.demo.managecustomer.managecustomer
+            src: ..\managecustomer\webapp
+          - path: /appconfig
+            src: appconfig

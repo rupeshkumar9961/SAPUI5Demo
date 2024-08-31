@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Image id="idItemImageCol01ValImage" src="../../images/HT-1062.jpg" alt="Item Image" width="100px" height="70px" />
+    <Text id="idProductIDItemCol02ValText" text="{
+            path: 'ProductID'
+        }" />
+    <Text id="idUnitPriceItemCol03ValText" core:require="{
+            formatter: 'com/sap/demo/manageorders/model/formatter'
+        }" text="{
+            path: 'UnitPrice',
+            formatter: 'formatter.formatUnitPrice'
+        }" />
+    <ObjectStatus id="idOrderedItemCol04ValStatusObjectStatus" text="Ordered" state="Success" />
+    <Text id="idQuantityItemCol05ValText" core:require="{
+            formatter: 'com/sap/demo/manageorders/model/formatter'
+        }" text="{
+            path: 'Quantity',
+            formatter: 'formatter.formatQuantityText'
+        }" />
+
+    <Text id="idTotalNetAmountItemCol05ValText" core:require="{
+            formatter: 'com/sap/demo/manageorders/model/formatter'
+        }" text="{
+                parts: [
+                    {path: 'UnitPrice'},
+                    {path: 'Quantity'}
+                ],
+                formatter: 'formatter.calculateTotalAmountWithCurrency'
+        }" />
+</core:FragmentDefinition>

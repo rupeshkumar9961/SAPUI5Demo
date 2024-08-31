@@ -1,0 +1,78 @@
+.sapUiTableCell {
+    text-align: center;
+}
+
+.savedMessage {
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+}
+.customStateItemText {
+    color: rgb(30, 88, 213);
+    padding: 5px; /* Optional: Add some padding */
+}
+
+.customStateText {
+    color: white;
+   
+    padding: 10px; /* Optional: Add some padding */
+    font-size: 3.5rem;
+    line-height: 2rem;
+    min-height: 2rem;
+}
+
+.customMicroProcessFlow {
+    font-size: 124px; /* Adjust icon size */
+    height: 150px; /* Match the height to ensure consistency */
+}
+
+.centeredText {
+    text-align: center;
+    background-color: #cdcfce;
+}
+
+html.sap-desktop:not(.sapUiNativeScrollbars) {
+    scrollbar-color: #313233 #c79999;
+}
+
+.sapMIBar-CTX .sapMTitle {
+    color: #6ca0d8;
+    text-shadow: none;
+}
+
+.headerTitle {
+    text-align: center;
+    background-color: #cdcfce;
+    font-size: 30px;
+
+}
+
+.sapUiFormTitleH1, .sapUiFormTitleH2, .sapUiFormTitleH3, .sapUiFormTitleH4, .sapUiFormTitleH5, .sapUiFormTitleH6 {
+    font-weight: normal;
+    color: #e8620e;
+}
+
+
+.sapUiFormContainerTitle .sapUiFormTitleH1, .sapUiFormContainerTitle .sapUiFormTitleH2, .sapUiFormContainerTitle .sapUiFormTitleH3, .sapUiFormContainerTitle .sapUiFormTitleH4, .sapUiFormContainerTitle .sapUiFormTitleH5, .sapUiFormContainerTitle .sapUiFormTitleH6 {
+    color: #6208f4;
+    font-weight: bold;
+}
+
+
+.sapMLabel {
+    color: #0a2139;
+    font-weight: bold;
+}
+
+.sapMColumnHeader .sapMText {
+    font-weight: bold;
+}
+
+.sapUiTableHeaderDataCell .sapMText, .sapMColumnHeader .sapMText {
+    color: #5c1dc2;
+}
+
+.sapMSFI {
+    color: #e76500;
+    border: #6311e6;
+}

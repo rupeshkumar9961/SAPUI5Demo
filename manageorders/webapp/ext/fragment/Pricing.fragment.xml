@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout">  
+  <l:VerticalLayout
+    id="orderSummary"
+    width="100%" core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}" >
+    <l:content>
+      <HBox wrap="Wrap" width="100%" justifyContent="SpaceBetween"
+                    fitContainer="true" alignItems="Center" class="sapUiTinyMarginBottom">
+        <Text text="Unit Price"/>
+          <ObjectNumber class="OrderSummaryContent sapMObjectNumberLongText"
+              number="{
+                  parts:[{path:'UnitPrice'},{value:'USD'}],
+                  type: 'sap.ui.model.type.Currency',
+                  formatter: 'formatter.formatDecimal'
+              }"
+              unit="">
+          </ObjectNumber> 
+      </HBox>
+      <HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+        <Text text="Item Price" class="totalText"/>
+          <ObjectNumber class="OrderSummaryContent sapMObjectNumberLongText"
+              number="{
+                  parts:[{path:'UnitPrice'},{path:'Quantity'}],
+                  type: 'sap.ui.model.type.Currency',
+                  formatter: 'formatter.formatTotalPrice'
+              }"
+              unit="USD"
+              emphasized="true">
+          </ObjectNumber>    
+      </HBox>
+      <HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+        <Text text="Discount" class="totalText"/>
+          <ObjectNumber class="OrderSummaryContent sapMObjectNumberLongText"
+              number="{
+                  parts:[{value:'10'},{value:'USD'}],
+                  type: 'sap.ui.model.type.Currency',
+                  formatter: 'formatter.formatDecimal'
+              }"
+              unit=""
+              emphasized="true">
+          </ObjectNumber>    
+      </HBox>
+      <HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+        <Text text="Item Net Amount" class="totalText"/>
+          <ObjectNumber class="OrderSummaryContent sapMObjectNumberLongText"
+              number="{
+                   parts:[{path:'UnitPrice'},{path:'Quantity'}],
+                  type: 'sap.ui.model.type.Currency',
+                  formatter: 'formatter.formatItemNet'
+              }"
+              unit="USD"
+              emphasized="true">
+          </ObjectNumber>    
+      </HBox>
+    </l:content>
+  </l:VerticalLayout>
+</core:FragmentDefinition>

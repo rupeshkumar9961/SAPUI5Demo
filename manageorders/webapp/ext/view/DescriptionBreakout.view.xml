@@ -1,0 +1,8 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<VBox id="idVBox">
+		<TextArea id="idTestingDescriptionTextArea" 
+				value="Testing"
+				width="30%" 
+				editable="false"/>
+	</VBox>
+</mvc:View>		

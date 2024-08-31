@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    
+  
+    <l:VerticalLayout width="50%">
+        <!-- Title for the Payment Information -->
+       
+
+        <!-- Payment Method -->
+        <ObjectStatus
+            text="Credit Card"
+            state="Success"
+            class="sapUiSmallMarginBottom"/>
+
+        <!-- Payment Amount -->
+        <ObjectStatus
+            text="Amount: $123.45"
+            state="Information"
+            class="sapUiSmallMarginBottom"/>
+
+        <!-- Payment Status -->
+       
+        <ObjectStatus
+            text="Status: Paid"
+            state="Success"
+            class="sapUiSmallMarginBottom"/>
+
+        <!-- Payment Date -->
+        <ObjectStatus
+            text="Date: August 13, 2024"
+            state="None"/>
+    </l:VerticalLayout>
+   
+
+</core:FragmentDefinition>

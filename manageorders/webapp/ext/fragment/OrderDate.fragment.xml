@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <l:HorizontalLayout>
+    <l:VerticalLayout core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}">
+        <Title text="Order Date"
+            class="sapUiTinyMarginBottom"/>
+        <ObjectStatus text="{parts: [{path: 'OrderDate'}], formatter: 'formatter.formatDate'}"
+            class="sapMObjectStatusLarge" />
+    </l:VerticalLayout>
+    <l:VerticalLayout core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}">
+        <Title text="Delivery Type"
+            class="sapUiTinyMarginBottom"/>
+        <ObjectStatus text="{deliveryModel>/DeliveryType}"
+            class="customStateText" />
+    </l:VerticalLayout>
+</l:HorizontalLayout>
+</core:FragmentDefinition>

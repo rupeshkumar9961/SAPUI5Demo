@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+
+    <f:Form id="idShippingDetailsForm" bindingContexts="">
+        <f:layout>
+            <f:ColumnLayout id="idShippingDetailsColumnLayout" columnsM="2" />
+        </f:layout>
+        <f:formContainers>
+            <f:FormContainer id="idShippingDetailsFormContainer">
+                <f:formElements>
+                    
+                    <f:FormElement id="idCompanyNameFormElement" label="Company Name">
+                        <f:fields>
+                            <Text id="idCompanyNameText" text="{parts: [{path: 'shipperContext>/shipper/CompanyName'}]}" />
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement id="idPhoneFormElement" label="Phone Number">
+                        <f:fields>
+                            <Text id="idPhoneText" text="{parts: [{path: 'shipperContext>/shipper/Phone'}]}" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+
+</core:FragmentDefinition>

@@ -1,0 +1,9 @@
+{
+  "applications": {
+    "CustomerDetails-display": {
+      "additionalInformation": "SAPUI5.Component=com.sap.demo.managecustomer.managecustomer",
+      "applicationType": "URL",
+      "url": "../resources/com.sap.demo.managecustomer.managecustomer"
+    }
+  }
+}

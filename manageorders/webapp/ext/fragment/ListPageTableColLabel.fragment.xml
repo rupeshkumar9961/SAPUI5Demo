@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Column id="idListTabColImageColumn">
+        <Text text="" id="idImageCol01Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="ImageKey" value="\{columnKey: ImageColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabColOrderIDColumn">
+        <Text text="Order ID" id="idOrderIDCol02Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="OrderIDKey" value="\{columnKey: OrderIDColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabColCustomerIDColumn">
+        <Text text="Customer ID" id="idCustomerIDCol03Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="CustomerIDKey" value="\{columnKey: CustomerIDColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabColOrderDateColumn">
+        <Text text="Order Date" id="idOrderDateCol04Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="OrderDateKey" value="\{columnKey: OrderDateColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabColOrderStatusColumn">
+        <Text text="Order Status" id="idOrderStatusCol05Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="OrderStatusKey" value="\{columnKey: OrderStatusColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+
+    <Column id="idListTabColAddressColumn">
+        <Text text="Address" id="idAddressCol05Text" textAlign="Center"/>
+        <customData>
+            <core:CustomData key="AddressKey" value="\{columnKey: AddressColKey,columnIndex: 1}"/>
+        </customData>
+    </Column>
+</core:FragmentDefinition>

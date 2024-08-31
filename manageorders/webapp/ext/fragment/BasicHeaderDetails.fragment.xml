@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+
+    <f:Form id="idBasicDetailsForm">
+        <f:layout>
+            <f:ColumnLayout id="idBasicDetailsColumnLayout" columnsM="3" columnsL="3" columnsXL="3" />
+        </f:layout>
+        <f:formContainers>
+            <f:FormContainer id="idBasicDetailsFormContainer" core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}">
+                <f:formElements>
+                    <f:FormElement id="idOrderIDFormElement" label="Employee ID">
+                        <f:fields>
+                            <Text id="idOrderIDText" text="{parts: [{path: 'EmployeeID'}]}" />
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement id="idCustomerIDFormElement" label="Customer ID">
+                        <f:fields>
+                            <Link id="idCustomerIDLink" text="{parts: [{path: 'CustomerID'}]}" press=".extension.com.sap.demo.manageorders.ext.controller.OrderObjectPage.onCustomerIDPress" />
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement id="idRequiredDateFormElement" label="Required Date">
+                        <f:fields>
+                            <Text id="idRequiredDateText" core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}" text="{path: 'RequiredDate', formatter: 'formatter.formatDate'}" />
+                        </f:fields>
+                    </f:FormElement>
+
+                    <f:FormElement id="idShippedDateFormElement" label="Shipped Date">
+                        <f:fields>
+                            <Text id="idShippedDateText" core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}" text="{path: 'ShippedDate', formatter: 'formatter.formatDate'}" />
+                        </f:fields>
+                    </f:FormElement>
+
+                    <f:FormElement id="idShipViaFormElement" label="Ship Via">
+                        <f:fields>
+                            <Text id="idShipViaText" text="{parts: [{path: 'ShipVia'}], formatter: 'formatter.formatShipVia'}" />
+                        </f:fields>
+                    </f:FormElement>
+
+                    <f:FormElement id="idOrderDateFormElement" label="Order Date">
+                        <f:fields>
+                            <Text id="idOrderDateText" core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}" text="{path: 'OrderDate', formatter: 'formatter.formatDate'}" />
+                        </f:fields>
+                    </f:FormElement>
+
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+
+</core:FragmentDefinition>

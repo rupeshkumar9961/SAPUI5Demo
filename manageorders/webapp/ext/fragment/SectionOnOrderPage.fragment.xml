@@ -1,0 +1,49 @@
+<core:FragmentDefinition  
+	xmlns="sap.suite.ui.commons"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:l="sap.ui.layout"
+		xmlns:core="sap.ui.core"
+		xmlns:microchart="sap.suite.ui.microchart"
+		xmlns:si="sap.suite.ui.commons.statusindicator"
+		xmlns:m="sap.m">
+
+	 
+		 <m:HBox width="100%">
+        <m:VBox width="50%">
+			
+			<MicroProcessFlow class="customMicroProcessFlow" >
+				<content>
+					<MicroProcessFlowItem icon="sap-icon://account"/>
+					<MicroProcessFlowItem state="Information" icon="sap-icon://money-bills"/>
+					<MicroProcessFlowItem state="Information" icon="sap-icon://product"/>
+					<MicroProcessFlowItem state="Warning" icon="sap-icon://journey-change"/>
+					<MicroProcessFlowItem state="Success" icon="sap-icon://shipping-status"/>
+					<MicroProcessFlowItem  icon="sap-icon://cancel"/>
+				</content>
+			</MicroProcessFlow>
+			 </m:VBox>
+			  <m:VBox width="50%">
+			    <m:HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+		 <m:Text text="-->Item Payment done at 9:00 AM 12th August 2024" class="totalText"/>
+			 </m:HBox>  
+			 <m:HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+		 <m:Text text="-->Item Shippment done at 10:00 AM 13th August 2024" class="totalText"/>
+			 </m:HBox> 
+			 <m:HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+		 <m:Text text="-->Item Payment done at 9:00 AM 12th August 2024" class="totalText"/>
+			 </m:HBox> 
+			 <m:HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+		 <m:Text text="-->Item in Transit at 8:00 AM 14th August 2024" class="totalText"/>
+			 </m:HBox> 
+			 <m:HBox wrap="Wrap" justifyContent="SpaceBetween" width="100%"
+                    fitContainer="true" class="sapUiTinyMarginBottom totalRow" alignItems="Center">
+		 <m:Text text="-->Item Delivered at 9:00 PM 14th August 2024" class="totalText"/>
+			 </m:HBox> 
+			 </m:VBox>
+    </m:HBox>
+		
+</core:FragmentDefinition>

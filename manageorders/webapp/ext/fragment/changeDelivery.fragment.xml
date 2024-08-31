@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="changeDeliveryDialog"
+        contentWidth="30rem" 
+        draggable="true"
+        resizable="true"
+        stretch="false"        
+        contentHeight="400px"
+        core:require="{formatter: 'com/sap/cloud/pxorderobjectpageui/model/formatter'}"
+        class="sapUiTinyMargin">
+        <VBox  id="vBoxClose" class="customDialogPadding">
+        <Label id="labelIDClose"  text="Select one Option:" class="customTextPadding" required="true" />
+
+            <HBox id="hBoxIDClose" justifyContent="Center" class="sapUiSmallMarginBottom">
+            <VBox id="vBoxReasons"  class="customRadioGroupPadding"> 
+             <RadioButtonGroup id="radioButtonClose"  columns="2" selectedIndex="{/State}">
+                <buttons>
+                    <RadioButton id="rbID1" text="Express Delivery" />
+                    <RadioButton id="rbID2" text="Delayed Delivery" />
+                    <RadioButton id="rbID3" text="Priority Delivery" />
+                    <RadioButton id="rbID4" text="Standard Delivey" />
+                </buttons>
+            </RadioButtonGroup>
+             </VBox>
+            </HBox>
+            <Text id="textIDComments" text="Comments:" class="sapUiSmallMarginBottom" />
+            <TextArea id="textAreaClose"  placeholder="Write your message here." growing="true" growingMaxLines="4" width="100%" rows="4" />
+        </VBox>
+        <beginButton>
+            <Button id="buttonIDConfirm" text="Confirm" press="onSubmit" />
+        </beginButton>
+        <endButton>
+            <Button id="buttonIDCancel" text="Cancel" press="onCancel" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
