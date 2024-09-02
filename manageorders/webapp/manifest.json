@@ -155,10 +155,11 @@
                     "Express Delivery Requested":{
                       "id": "ExpressDelivery",
                       "text": "Change Delivery Type ",
-                      "press":"com.sap.demo.manageorders.custom.CustomActions.changeDeliveryType",
+                      "press":".extension.com.sap.demo.manageorders.ext.controller.OrderObjectPage.onPressChangeDeliveryType",
                       "enabled":true
                     }
                   }
+                 
                 },
                 "Sections": {
                   "Order_Details::com.sap.vocabularies.UI.v1.LineItem": {

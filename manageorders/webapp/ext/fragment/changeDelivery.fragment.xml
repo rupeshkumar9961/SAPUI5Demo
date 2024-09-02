@@ -5,15 +5,15 @@
         draggable="true"
         resizable="true"
         stretch="false"        
-        contentHeight="400px"
-        core:require="{formatter: 'com/sap/cloud/pxorderobjectpageui/model/formatter'}"
+        contentHeight="400px" 
+        core:require="{formatter: 'com/sap/demo/manageorders/model/formatter'}"
         class="sapUiTinyMargin">
         <VBox  id="vBoxClose" class="customDialogPadding">
         <Label id="labelIDClose"  text="Select one Option:" class="customTextPadding" required="true" />
 
             <HBox id="hBoxIDClose" justifyContent="Center" class="sapUiSmallMarginBottom">
             <VBox id="vBoxReasons"  class="customRadioGroupPadding"> 
-             <RadioButtonGroup id="radioButtonClose"  columns="2" selectedIndex="{/State}">
+             <RadioButtonGroup id="radioButtonClose"  columns="2" >
                 <buttons>
                     <RadioButton id="rbID1" text="Express Delivery" />
                     <RadioButton id="rbID2" text="Delayed Delivery" />

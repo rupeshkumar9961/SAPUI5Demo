@@ -76,3 +76,34 @@ html.sap-desktop:not(.sapUiNativeScrollbars) {
     color: #e76500;
     border: #6311e6;
 }
+
+.customDialogPadding {
+    padding: 20px; /* Adds padding around the entire dialog content */
+}
+
+.customTextPadding {
+    padding: 10px 0; /* Adds padding above and below the text elements */
+}
+
+.customRadioGroupPadding {
+    padding: 10px; /* Adds padding around the radio button groups */
+}
+
+.customTextAreaPadding {
+    padding: 10px; /* Adds padding inside the text area */
+}
+
+/* Optional: Add margin for better spacing */
+.sapUiTinyMargin {
+    margin: 20px; /* Adjust as needed */
+}
+
+.customDeliveryText {
+   
+    padding: 10px; 
+    color: blue;            /* Text color */
+    font-size: 16px;        /* Set font size, adjust as needed */
+    background-color: rgb(83, 136, 176); /* Background color */
+    
+}
+

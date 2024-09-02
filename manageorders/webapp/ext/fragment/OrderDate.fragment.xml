@@ -12,7 +12,7 @@
         <Title text="Delivery Type"
             class="sapUiTinyMarginBottom"/>
         <ObjectStatus text="{deliveryModel>/DeliveryType}"
-            class="customStateText" />
+            class="customDeliveryText" />
     </l:VerticalLayout>
 </l:HorizontalLayout>
 </core:FragmentDefinition>

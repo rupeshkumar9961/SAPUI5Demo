@@ -79,73 +79,11 @@ sap.ui.define(
               console.error("Component not found.");
             }
 
-            // var oView = this.getView();
-            // var oController = oView.getController();
-            // var oComponent = oController.getOwnerComponent(); // Access from the view's controller
-
-            // if (oComponent) {
-            //     var oModel = oComponent.getModel(); // Get the model from the component
-
-            //     if (oModel) {
-            //         var oBindingContext = oView.getBindingContext();
-            //         if (oBindingContext) {
-            //             var viewContextPath = oBindingContext.getPath();
-            //             var orderDetailsPath = `${viewContextPath}/Order_Details`;
-            //             oModel.read(orderDetailsPath, {
-            //                 success: function (oData) {
-            //                     console.log("Order_Details fetched successfully:", oData);
-            //                     var orderDetailsModel = new sap.ui.model.json.JSONModel(oData);
-            //                     this.getView().setModel(orderDetailsModel, "orderDetailsModel");
-            //                 }.bind(this),
-            //                 error: function (oError) {
-            //                     console.error("Error fetching Order_Details:", oError);
-            //                 }
-            //             });
-            //             var shipperPath = `${viewContextPath}/Shipper`;
-            //             var shipperModel = new sap.ui.model.json.JSONModel();
-            //             this.getView().setModel(shipperModel, "shipperContext");
-
-            //             oModel.read(shipperPath, {
-            //                 success: (data) => {
-            //                     shipperModel.setProperty("/shipper", data);
-            //                     console.log("Shipper data loaded successfully:", data);
-            //                 },
-            //                 error: (error) => {
-            //                     console.error("Error loading Shipper data:", error);
-            //                 }
-            //             });
-            //         } else {
-            //             console.error("Binding context is not available.");
-            //         }
-            //     } else {
-            //         console.error("OData model not found.");
-            //     }
-            // } else {
-            //     console.error("Component not found.");
-            // }
-            //
-            //
-            //   const viewContextPath1 = this.getView()
-            //     .getBindingContext()
-            //     .getPath();
-            //   const path1 = `${viewContextPath1}/Shipper`;
-
-            //   const shipperModel = new sap.ui.model.json.JSONModel();
-            //   this.getView().setModel(shipperModel, "shipperContext");
-
-            //   this.getView()
-            //     .getModel()
-            //     .read(path1, {
-            //       success: (data) => {
-            //         shipperModel.setProperty("/shipper", data);
-            //       },
-            //       error: (error) => {
-            //         console.error("Error loading Shipper data:", error);
-            //       },
-            //     });
+           
           },
+        },
           onExit: function () {},
-          changeDeliveryTypes: function (sTitle) {
+          onPressChangeDeliveryType: function () {
             var oView = this.getView();
 
             // Create the dialog lazily
@@ -157,7 +95,7 @@ sap.ui.define(
             })
               .then((oDialog) => {
                 oView.addDependent(oDialog);
-                oDialog.setTitle(sTitle);
+                oDialog.setTitle("Change Delivery Type");
                 oDialog.open();
               })
               .catch(function (oError) {
@@ -168,7 +106,7 @@ sap.ui.define(
             var oView = this.getView();
             var oRadioGroup = this.getView().byId("radioButtonClose");
             var sSelectedKey = oRadioGroup.getSelectedButton().getText();
-            sap.m.MessageToast.show("Selected Key: " + sSelectedKey);
+            sap.m.MessageToast.show("Delivery Type Changed to : " + sSelectedKey);
 
             var sSelectedText = this.getView().byId("textAreaClose").getValue();
 
@@ -185,7 +123,7 @@ sap.ui.define(
               dialog.destroy();
             }
           },
-        },
+       
 
         onCustomerIDPress: function (oEvent) {
           const sCustomerID = oEvent
