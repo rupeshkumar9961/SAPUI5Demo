@@ -5,9 +5,10 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "com/sap/demo/managecustomer/managecustomer/model/models"
+        "com/sap/demo/managecustomer/managecustomer/model/models",
+        "sap/ui/model/json/JSONModel"
     ],
-    function (UIComponent, Device, models) {
+    function (UIComponent, Device, models, JSONModel) {
         "use strict";
 
         return UIComponent.extend("com.sap.demo.managecustomer.managecustomer.Component", {
@@ -39,6 +40,12 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                //Set the image model
+                      // create and set the JSON model
+                var oModel = new JSONModel();
+                oModel.loadData("model/Images.json");
+                this.setModel(oModel, "imagesModel");
             }
         });
     }

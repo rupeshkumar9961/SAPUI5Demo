@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core"
     xmlns="sap.m">
-    <Image id="idImageCol01ValImage" src="../../images/HT-1137.jpg" alt="Image Description" width="120px" height="60px" />
+    <Image id="idImageCol01ValImage" src="https://sdk.openui5.org/test-resources/sap/ui/documentation/sdk/images/HT-1036.jpg" alt="Image Description" width="120px" height="60px" />
     <Text id="idOrderIDCol02ValText" text="{
             path: 'OrderID'
         }" />

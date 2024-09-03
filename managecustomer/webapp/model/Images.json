@@ -1,0 +1,14 @@
+{
+    "images": [
+      { "src": "../Images/image01.jpg" },
+      { "src": "../Images/image02.jpg" },
+      { "src": "../Images/image03.jpg" },
+      { "src": "../Images/image04.jpg" },
+      { "src": "../Images/image05.jpg" },
+      { "src": "../Images/image06.jpg" },
+      { "src": "../Images/image07.jpg" },
+      { "src": "../Images/image08.jpg" },
+      { "src": "../Images/image09.jpg" },
+      { "src": "../Images/image10.jpg" }
+    ]
+  }  

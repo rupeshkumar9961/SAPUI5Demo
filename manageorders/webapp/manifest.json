@@ -152,14 +152,13 @@
                       "press": ".extension.com.sap.demo.manageorders.ext.controller.OrderObjectPage.onPressManageCustomers",
                       "enabled": true
                     },
-                    "Express Delivery Requested":{
+                    "Express Delivery Requested": {
                       "id": "ExpressDelivery",
                       "text": "Change Delivery Type ",
-                      "press":".extension.com.sap.demo.manageorders.ext.controller.OrderObjectPage.onPressChangeDeliveryType",
-                      "enabled":true
+                      "press": ".extension.com.sap.demo.manageorders.ext.controller.OrderObjectPage.onPressChangeDeliveryType",
+                      "enabled": true
                     }
                   }
-                 
                 },
                 "Sections": {
                   "Order_Details::com.sap.vocabularies.UI.v1.LineItem": {
@@ -285,7 +284,6 @@
             }
           }
         }
-   
       }
     }
   },
@@ -301,11 +299,11 @@
         "entitySet": "Orders",
         "component": {
           "name": "sap.suite.ui.generic.template.ListReport",
-          "list": true, 
+          "list": true,
           "settings": {
             "condensedTableLayout": true,
             "variantManagementHidden": true,
-            "subTitleIfVariantMgmtHidden": "Manage Orders - List",
+            "subTitleIfVariantMgmtHidden": "Manage Orders",
             "dataLoadSettings": {
               "loadDataOnAppLaunch": "always"
             },
@@ -317,7 +315,6 @@
               "multiSelect": false,
               "tableColumnVerticalAlignment": "Middle",
               "enableAutoBinding": true
-
             },
             "navigation": {
               "routing": {
@@ -329,12 +326,10 @@
         "pages": {
           "ObjectPage|Orders": {
             "entitySet": "Orders",
-
             "component": {
               "name": "sap.suite.ui.generic.template.ObjectPage",
               "settings": {
                 "condensedTableLayout": true,
-
                 "editableHeaderContent": false,
                 "sections": {
                   "OrderData1": {
@@ -374,5 +369,9 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "comsapdemomanageorders"
   }
 }

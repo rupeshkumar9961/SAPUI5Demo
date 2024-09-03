@@ -1,25 +1,26 @@
 <mvc:View controllerName="com.sap.demo.managecustomer.managecustomer.controller.Customers"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="idPage" titleAlignment="Center" titleLevel="H1" showHeader="false" title="Customers" contentOnlyBusy="true" backgroundDesign="Transparent" class="headerTitle pageHeader">
-        <content>
-            <Carousel id="idCarousel" height="200px" loop="true" showPageIndicator="false">
-                <HBox id="idFirstSetHBox">
-                    <Image id="id07Image" src="../Images/image07.jpg" width="300px" height="200px"/>
-                    <Image id="id01Image" src="../Images/image01.jpg" width="300px" height="200px"/>
-                    <Image id="id02Image" src="../Images/image02.jpg" width="300px" height="200px"/>
-                    <Image id="id10Image" src="../Images/image10.jpg" width="300px" height="200px"/>
-                    <Image id="id06Image" src="../Images/image06.jpg" width="300px" height="200px"/>
-                </HBox>
-                <HBox id="idSecndSetHBox">
-                    <Image id="id09Image" src="../Images/image09.jpg" width="300px" height="200px"/>
-                    <Image id="id03Image" src="../Images/image03.jpg" width="300px" height="200px"/>
-                    <Image id="id04Image" src="../Images/image04.jpg" width="300px" height="200px"/>
-                    <Image id="id08Image" src="../Images/image08.jpg" width="300px" height="200px"/>
-                    <Image id="id05Image" src="../Images/image05.jpg" width="300px" height="200px"/>
-                </HBox>
-            </Carousel>
-        </content>
+<Page id="idPage" titleAlignment="Center" titleLevel="H1" showHeader="false" title="Customers" contentOnlyBusy="true" backgroundDesign="Transparent" class="headerTitle pageHeader">
+    <content>
+        <Carousel id="idCarousel" height="200px" loop="true" showPageIndicator="false">
+            <HBox id="idFirstSetHBox">
+                <Image id="id07Image" src="https://www.anodius.com/wp-content/uploads/2023/04/Unlocking-the-Power-of-SAP-Customer-Experience.png" width="300px" height="200px"/>
+                <Image id="id01Image" src="https://analyticsindiamag.com/wp-content/uploads/2021/01/SAP.jpg" width="300px" height="200px"/>
+                <Image id="id02Image" src="https://www.nihilent.com/wp-content/uploads/2021/08/btp.jpg" width="300px" height="200px"/>
+                <Image id="id10Image" src="https://rev-trac.com/wp-content/uploads/2024/08/Document_management.png" width="300px" height="200px"/>
+                <Image id="id06Image" src="https://assets.dm.ux.sap.com/sap-cx-live-digital/images/sap-customer-experience-live-2020.png" width="300px" height="200px"/>
+            </HBox>
+            <HBox id="idSecndSetHBox">
+                <Image id="id09Image" src="https://www.prodata-rz.com/wp-content/uploads/2020/04/SAP-Silver-Partner-scaled.jpg" width="300px" height="200px"/>
+                <Image id="id03Image" src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/Vd3bj2jPe/videoblocks-close-up-of-business-woman-working-with-laptop-computer-in-office-office-worker-looking-at-business-presentation-on-laptop-screen-woman-analyzing-finance-report-on-notebook-screen_hw8as_0lm_thumbnail-1080_01.png" width="300px" height="200px"/>
+                <Image id="id04Image" src="https://www.uniorg.de/wp-content/uploads/2019_SAP-C4HANA_Customer-Experience-Suite-1140x640.jpg" width="300px" height="200px"/>
+                <Image id="id08Image" src="https://www.medinat.com.au/media/amasty/blog/MaintainingSafeWorkingPracticesDuringCOVID-19.jpg" width="300px" height="200px"/>
+                <Image id="id05Image" src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_QgarFwPWEg/v0/-1x-1.jpg" width="300px" height="200px"/>
+            </HBox>
+        </Carousel>
+    </content>
+
         <content>
             <Table id="idCustomersTable" items="{/Customers}" alternateRowColors="true" growing="true" class="centeredText">
                 <headerToolbar>

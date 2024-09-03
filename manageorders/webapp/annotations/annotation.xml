@@ -37,7 +37,7 @@
                                <PropertyValue Property="Value" Path="ShipName"></PropertyValue >
                             </Record>
                         </PropertyValue>
-                        <PropertyValue Property="ImageUrl" String="../images/HT-1137.jpg" />
+                        <PropertyValue Property="ImageUrl" String="https://sdk.openui5.org/test-resources/sap/ui/documentation/sdk/images/HT-1036.jpg" />
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
                                  <PropertyValue Property="Label" String="Order"></PropertyValue >
@@ -127,7 +127,7 @@
                                 <PropertyValue Property="Value" Path="ProductID" />
                             </Record>
                         </PropertyValue>
-                        <PropertyValue Property="ImageUrl" String="../images/HT-1062.jpg" />
+                        <PropertyValue Property="ImageUrl" String="https://sdk.openui5.org/test-resources/sap/ui/documentation/sdk/images/HT-1062.jpg" />
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value" Path="Product/ProductName" />
